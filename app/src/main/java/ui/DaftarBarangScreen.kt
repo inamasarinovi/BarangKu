@@ -1,3 +1,4 @@
+
 package com.example.barangku.ui
 
 import androidx.compose.foundation.layout.*
@@ -15,7 +16,8 @@ import com.example.barangku.viewmodel.BarangViewModel
 fun DaftarBarangScreen(
     viewModel: BarangViewModel,
     onTambahBarang: () -> Unit,
-    onDetailBarang: (Int) -> Unit
+    onDetailBarang: (Int) -> Unit,
+    onPengaturan: () -> Unit
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
 
@@ -36,10 +38,22 @@ fun DaftarBarangScreen(
                 .padding(16.dp)
         ) {
 
-            Text(
-                text = "BarangKu",
-                style = MaterialTheme.typography.headlineMedium
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "BarangKu",
+                    style = MaterialTheme.typography.headlineMedium
+                )
+
+                TextButton(
+                    onClick = onPengaturan
+                ) {
+                    Text("Pengaturan")
+                }
+            }
 
             Text(
                 text = "Daftar Barang Pribadi",

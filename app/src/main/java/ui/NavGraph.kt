@@ -1,3 +1,4 @@
+
 package com.example.barangku.ui
 
 import androidx.compose.runtime.Composable
@@ -35,6 +36,9 @@ fun BarangKuNavGraph(
                     navController.navigate(
                         Screen.DetailBarang.createRoute(barangId)
                     )
+                },
+                onPengaturan = {
+                    navController.navigate(Screen.Settings.route)
                 }
             )
         }
@@ -89,6 +93,18 @@ fun BarangKuNavGraph(
                 barangId = barangId,
                 viewModel = barangViewModel,
                 onSelesai = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
+        // HALAMAN SETTINGS
+        composable(
+            route = Screen.Settings.route
+        ) {
+            SettingsScreen(
+                viewModel = settingsViewModel,
+                onKembali = {
                     navController.popBackStack()
                 }
             )

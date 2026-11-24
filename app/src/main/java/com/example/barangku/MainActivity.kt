@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
                 BarangKuNavGraph(
                     navController = navController,
                     barangViewModel = barangViewModel,
-                    settingsViewModel = settingViewModel
+                    settingsViewModel = settingsViewModel
                 )
             }
         }
