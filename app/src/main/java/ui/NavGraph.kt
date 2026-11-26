@@ -27,6 +27,7 @@ fun BarangKuNavGraph(
         ) {
             DaftarBarangScreen(
                 viewModel = barangViewModel,
+                settingsViewModel = settingsViewModel,
                 onTambahBarang = {
                     navController.navigate(
                         Screen.FormBarang.createRoute()
